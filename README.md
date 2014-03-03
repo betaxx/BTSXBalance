@@ -15,7 +15,7 @@ Usage
 List Address Groupings
 ========================
 
-On Bitshares-PTS go to debug and type  "listaddressgroupings"
+On Bitshares-PTS or Bitcoin-QT go to debug and type  "listaddressgroupings"
 
 Copy the output on a text file named "addressGroupings.txt" 
 
