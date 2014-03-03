@@ -1,7 +1,7 @@
 BTSXBalance
 ==============
 
-Simple utity to calculate the BTSX Balance from the genesis.json.
+Simple utity to calculate the BTSX Balance from the genesis.json without using your wallet.
 
 This simple tool, checks your BTSX balance without using any your wallet/s, it just extracts the addresses from the output of "listaddressgroupings" or from a comma separated file and matches them to the genesis.json.
 
@@ -22,7 +22,7 @@ Copy the output on a text file named "addressGroupings.txt"
 
 Comma separated file
 ========================
-Create a text file named "addressesCommaSeparated.txt" and type the addresses separated by commas
+If you already know your addreseses, or use another client like "Multibit" just simply create a text file named "addressesCommaSeparated.txt" and type the addresses separated by commas
 
 ie: jlkjfalkfjalkdfjskjgja,jflkadjlfkafjlafjll
 
