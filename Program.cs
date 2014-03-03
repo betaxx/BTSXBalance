@@ -64,7 +64,7 @@ namespace GetBTSBalance
                 {
                     addressesCommaSeparated = file.ReadToEnd();
                 }
-                ;
+                
 
                 var list = addressesCommaSeparated.Split(',');
 
@@ -85,13 +85,16 @@ namespace GetBTSBalance
                     addressesjson = file.ReadToEnd();
                 }
 
-                var addressesPTS = JsonConvert.DeserializeObject<List<List<AddressGroupingBalance>>>(addressesjson);
-
-                foreach (var addressGroup in addressesPTS)
+                if (!String.IsNullOrEmpty(addressesjson))
                 {
-                    foreach (var address in addressGroup)
+                    var addressesPTS = JsonConvert.DeserializeObject<List<List<AddressGroupingBalance>>>(addressesjson);
+
+                    foreach (var addressGroup in addressesPTS)
                     {
-                        addresses.Add(address.GetAddress());
+                        foreach (var address in addressGroup)
+                        {
+                            addresses.Add(address.GetAddress());
+                        }
                     }
                 }
             }
