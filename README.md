@@ -1,9 +1,9 @@
-GetBTSXBalance
+BTSXBalance
 ==============
 
-Simple utity to get the BTSX Balance from the genesis.json.
+Simple utity to calculate the BTSX Balance from the genesis.json.
 
-I have made this quick tool, to do a quick balance check without using my wallet/s, it just extracts the addresses from the output of "listaddressgroupings" or from a comma separated file.
+This simple tool, checks your BTSX balance without using any your wallet/s, it just extracts the addresses from the output of "listaddressgroupings" or from a comma separated file and matches them to the genesis.json.
 
 Usage
 ============
