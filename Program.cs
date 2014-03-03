@@ -13,7 +13,8 @@ namespace GetBTSBalance
     {
         const string AddressesCommaSeparatedFileName = "addressesCommaSeparated.txt";
         const string GenesisJsonFileName = "genesis.json";
-        const string AddressGroupingsFileName = "addressGroupings.txt";
+        const string AddressGroupingsPTSFileName = "addressGroupingsPTS.txt";
+        const string AddressGroupingsBTCFileName = "addressGroupingsBTC.txt";
 
         static void Main(string[] args)
         {
@@ -23,7 +24,9 @@ namespace GetBTSBalance
             
             var addresses = new List<string>();
 
-            LoadAddresesFromAddressGroupings(addresses);
+            LoadAddresesFromPTSAddressGroupings(addresses);
+            
+            LoadAddresesFromBTCAddressGroupings(addresses);
             
             LoadAddressesFromCommaSeparatedFile(addresses);
 
@@ -70,17 +73,30 @@ namespace GetBTSBalance
 
                 foreach (var addressString in list)
                 {
-                    addresses.Add(addressString);
+                    if (!addresses.Contains(addressString))
+                    {
+                        addresses.Add(addressString);
+                    }
                 }
             }
         }
 
-        private static void LoadAddresesFromAddressGroupings(List<string> addresses)
+        private static void LoadAddresesFromPTSAddressGroupings(List<string> addresses)
         {
-            if (File.Exists(AddressGroupingsFileName))
+            LoadAddresesFromAddressGroupings(addresses, AddressGroupingsPTSFileName);
+        }
+
+        private static void LoadAddresesFromBTCAddressGroupings(List<string> addresses)
+        {
+            LoadAddresesFromAddressGroupings(addresses, AddressGroupingsPTSFileName);
+        }
+
+        private static void LoadAddresesFromAddressGroupings(List<string> addresses, string fileName)
+        {
+            if (File.Exists(fileName))
             {
                 var addressesjson = "";
-                using (var file = File.OpenText(AddressGroupingsFileName))
+                using (var file = File.OpenText(fileName))
                 {
                     addressesjson = file.ReadToEnd();
                 }
@@ -93,7 +109,10 @@ namespace GetBTSBalance
                     {
                         foreach (var address in addressGroup)
                         {
-                            addresses.Add(address.GetAddress());
+                            if (!addresses.Contains(address.GetAddress()))
+                            {
+                                addresses.Add(address.GetAddress());
+                            }
                         }
                     }
                 }
@@ -101,8 +120,6 @@ namespace GetBTSBalance
         }
     }
 
-
- 
 
     public class AddressGroupingBalance : List<string>
     {
