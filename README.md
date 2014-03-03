@@ -27,3 +27,9 @@ If you already know your addreseses, or use another client like "Multibit" just 
 ie: jlkjfalkfjalkdfjskjgja,jflkadjlfkafjlafjll
 
 
+Donate 
+PTS: Pf2hppxYg7XUvgKnMyMDm6dGL6wsia9vU5
+BTC: 1CY35fWBSMTe14dfkymt9Xf2dHRJa1CfSg
+
+
+
