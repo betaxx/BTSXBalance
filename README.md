@@ -17,7 +17,24 @@ List Address Groupings
 
 On Bitshares-PTS or Bitcoin-QT go to debug and type  "listaddressgroupings"
 
-Copy the output on a text file named "addressGroupings.txt" 
+Copy the output for BTC on "addressGroupingsBTC.txt" and for PTS on "addressGroupingsPTS.txt"
+
+It should look like this:
+
+[
+[
+[
+"12CLxa1B5V3ywxFaP7Qb5GUPF9kB7q48n4",
+0.18279316,
+"mul2"
+],
+[
+"18wh9z4o2NWSVJijiX6CcBLXYhPdahmbKk",
+0.00000000,
+"mul1"
+]
+]
+]
 
 
 Comma separated file
